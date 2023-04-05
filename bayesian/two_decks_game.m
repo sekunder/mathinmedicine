@@ -1,7 +1,7 @@
 n_cards = 100; % how many cards in each deck
 n_draws = 10; % number of draws you will take, in total
 good_p = 0.55; % the probability of drawing + from the good deck
-bad_p = 0.45; % the probability of drawing + from the bad deck
+bad_p = 0.4; % the probability of drawing + from the bad deck
 card_value = 5; % how much each card is worth
 
 gooddeck = (2 * (rand(n_cards,1) < good_p) - 1) * card_value;
@@ -17,7 +17,7 @@ end
 num_draws = 0; % how many cards you've drawn
 running_total = 0; % your current score
 pointers = [0,0]; % which card in each deck
-fprintf('There are two decks in front of you, deck 1 and deck 2. Both are made of cards that say +%d and -%d\n',card_value, card_value)
+fprintf('There are two decks in front of you, deck 1 and deck 2.\nBoth are made of cards that say +%d and -%d\n',card_value, card_value)
 fprintf('One is roughly %2.0f%% positive cards, and the other is roughly %2.0f%% good cards.\n', 100 * good_p, 100 * bad_p)
 fprintf('You can draw from either deck, until you draw a total of %d cards\n', n_draws)
 while num_draws < n_draws
